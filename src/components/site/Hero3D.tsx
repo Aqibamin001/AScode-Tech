@@ -96,17 +96,3 @@ export default function Hero3D() {
     </div>
   );
 }
-
-export default function Hero3D() {
-  return (
-    <div className="absolute inset-0">
-      <Canvas
-        camera={{ position: [0, 0, 5.2], fov: 42 }}
-        dpr={[1, 1.6]}
-        gl={{ antialias: true, alpha: true }}
-      >
-        <Scene />
-      </Canvas>
-    </div>
-  );
-}
