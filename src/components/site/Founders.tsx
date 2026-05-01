@@ -26,11 +26,11 @@ export default function Founders() {
               transition={{ duration: 0.8, delay: i * 0.1 }}
               className={`group ${i === 1 ? "md:mt-24" : ""}`}
             >
-              <div className="relative overflow-hidden border border-cream-300 aspect-[4/5] bg-cream-200">
+              <div className="relative overflow-hidden border border-cream-300 aspect-[4/5] bg-cream-50">
                 <img
                   src={f.image}
                   alt={f.name}
-                  className="w-full h-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+                  className="w-full h-full object-contain transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.02]"
                 />
                 <div className="absolute top-4 left-4 px-3 py-1 bg-cream-50/90 backdrop-blur text-xs font-mono">
                   0{i + 1} / 02
