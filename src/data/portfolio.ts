@@ -1,3 +1,6 @@
+import aqibImage from "@/assets/aqib.png";
+import saadImage from "@/assets/saad.png";
+
 export const PROJECTS = [
   {
     id: "project-1",
@@ -106,8 +109,8 @@ export const SERVICES = [
 ];
 
 export const FOUNDERS = [
-  { name: "Aqib Amin", role: "Co-Founder & CEO", bio: "Aqib leads strategy, product and client partnerships. 8+ years shipping digital products for startups and enterprise.", image: "https://images.unsplash.com/photo-1584940120505-117038d90b05?crop=entropy&cs=srgb&fm=jpg&w=1200&q=85" },
-  { name: "Saad Shakoor", role: "Co-Founder & CTO", bio: "Saad owns engineering and architecture. Specializes in React, Next.js, distributed systems and developer experience.", image: "https://images.unsplash.com/photo-1737574821698-862e77f044c1?crop=entropy&cs=srgb&fm=jpg&w=1200&q=85" },
+  { name: "Aqib Amin", role: "Co-Founder & CEO", bio: "Aqib leads strategy, product and client partnerships. 8+ years shipping digital products for startups and enterprise.", image: aqibImage },
+  { name: "Saad Shakoor", role: "Co-Founder & CTO", bio: "Saad owns engineering and architecture. Specializes in React, Next.js, distributed systems and developer experience.", image: saadImage },
 ];
 
 export const TESTIMONIALS = [
