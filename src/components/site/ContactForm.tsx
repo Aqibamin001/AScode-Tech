@@ -205,7 +205,7 @@ export default function ContactForm() {
                 maxLength={5000}
               />
             </div>
-            <div className="md:col-span-2 flex items-center justify-between gap-4 bg-cream-50 px-5 py-5">
+            <div className="md:col-span-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-cream-50 px-5 py-5">
               <p className="text-xs text-ink/55 max-w-sm">
                 By submitting, you agree to us storing your message so we can reply. No spam. Ever.
               </p>
