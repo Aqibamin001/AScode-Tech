@@ -55,12 +55,12 @@ export default function Portfolio() {
                 className={`col-span-12 ${span} group text-left focus:outline-none`}
                 data-cursor-hover="true"
               >
-                <div className="relative overflow-hidden border border-cream-300 aspect-[4/3] bg-cream-200">
+                <div className="relative overflow-hidden border border-cream-300 aspect-[4/3] bg-cream-50">
                   <img
                     src={p.cover}
                     alt={p.title}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+                    className="w-full h-full object-contain transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/20 transition-colors duration-500" />
                   <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3 text-cream-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -99,7 +99,7 @@ export default function Portfolio() {
                 </div>
               </DialogHeader>
 
-              <div className="bg-cream-200 relative w-full h-[40vh] md:h-[45vh] overflow-hidden flex-shrink-0">
+              <div className="bg-cream-200 relative w-full max-h-[62vh] overflow-auto flex-shrink-0">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={selected.images[imgIdx]}
@@ -109,7 +109,7 @@ export default function Portfolio() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="absolute inset-0 w-full h-full object-contain"
+                    className="block w-full h-auto object-contain"
                   />
                 </AnimatePresence>
                 <div className="absolute bottom-3 right-3 px-3 py-1 text-xs bg-ink/70 text-cream-50 rounded-full">
@@ -127,7 +127,7 @@ export default function Portfolio() {
                     }`}
                     aria-label={`Show image ${i + 1}`}
                   >
-                    <img src={src} alt={`thumb ${i + 1}`} className="w-full h-full object-cover" loading="lazy" />
+                    <img src={src} alt={`thumb ${i + 1}`} className="w-full h-full object-contain bg-cream-50" loading="lazy" />
                   </button>
                 ))}
               </div>
