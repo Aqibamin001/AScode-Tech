@@ -21,7 +21,8 @@ export const Route = createFileRoute("/api/public/bootstrap-admin")({
             });
             if (error) throw error;
             const found = data.users.find(
-              (u) => u.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase()
+              (u: { email?: string | null }) =>
+                u.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase()
             );
             if (found) userId = found.id;
             if (data.users.length < 200) break;
