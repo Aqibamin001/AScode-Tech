@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         <div className="grid grid-cols-12 gap-6 md:gap-10">
           <div className="col-span-12 md:col-span-6">
-            <h3 className="h-editorial text-5xl md:text-7xl lg:text-8xl">
+            <h3 className="h-editorial text-4xl sm:text-5xl md:text-7xl lg:text-8xl break-words">
               AScode<span className="text-orange-ascode">.</span>Tech
             </h3>
             <p className="mt-4 text-cream-100/70 max-w-md">

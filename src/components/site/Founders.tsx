@@ -3,13 +3,13 @@ import { FOUNDERS } from "@/data/portfolio";
 
 export default function Founders() {
   return (
-    <section id="team" className="relative bg-cream-100 py-24 md:py-36 border-t border-cream-300">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-        <div className="grid grid-cols-12 gap-6 md:gap-10 mb-16 md:mb-24">
+    <section id="team" className="relative bg-cream-100 py-16 sm:py-24 md:py-36 border-t border-cream-300">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10">
+        <div className="grid grid-cols-12 gap-4 sm:gap-6 md:gap-10 mb-10 sm:mb-16 md:mb-24">
           <div className="col-span-12 md:col-span-5">
-            <span className="text-xs uppercase tracking-[0.25em] text-ink/60">[ 04 — The studio ]</span>
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-ink/60">[ 04 — The studio ]</span>
           </div>
-          <h2 className="col-span-12 md:col-span-7 h-editorial text-5xl md:text-7xl lg:text-[5.5rem]">
+          <h2 className="col-span-12 md:col-span-7 h-editorial text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem]">
             Led by two
             <br />
             hands-on makers<span className="text-orange-ascode">.</span>

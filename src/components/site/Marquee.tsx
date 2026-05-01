@@ -10,8 +10,8 @@ export default function Marquee() {
   const track = [...items, ...items];
 
   return (
-    <div className="ticker-row py-5 bg-cream-100 overflow-hidden">
-      <div className="marquee-track animate-marquee gap-12 text-2xl md:text-4xl font-display font-semibold tracking-tight">
+    <div className="ticker-row py-4 sm:py-5 bg-cream-100 overflow-hidden">
+      <div className="marquee-track animate-marquee gap-12 text-xl sm:text-2xl md:text-4xl font-display font-semibold tracking-tight">
         {track.map((t, i) => (
           <span key={i} className="flex items-center gap-12 pr-12">
             <span>{t}</span>
