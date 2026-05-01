@@ -3,7 +3,14 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Float, MeshDistortMaterial } from "@react-three/drei";
 import type { Mesh, Group } from "three";
 
-function Blob({ color = "#FF4F00", scale = 1, speed = 1 }: { color?: string; scale?: number; speed?: number }) {
+const HERO_3D_COLORS = {
+  orange: "#ff4f00",
+  orangeGlow: "#ff7a1a",
+  ink: "#141414",
+  cream: "#eae6df",
+};
+
+function Blob({ color = HERO_3D_COLORS.orange, scale = 1, speed = 1 }: { color?: string; scale?: number; speed?: number }) {
   const ref = useRef<Mesh>(null);
   useFrame((state) => {
     if (!ref.current) return;
@@ -22,8 +29,10 @@ function Blob({ color = "#FF4F00", scale = 1, speed = 1 }: { color?: string; sca
         color,
         distort: 0.38,
         speed: 2,
-        roughness: 0.15,
-        metalness: 0.1,
+        roughness: 0.32,
+        metalness: 0.02,
+        emissive: HERO_3D_COLORS.orange,
+        emissiveIntensity: 0.16,
       }),
     ),
   );
@@ -44,7 +53,13 @@ function Torus() {
       "mesh" as any,
       { ref },
       h("torusKnotGeometry" as any, { args: [0.7, 0.22, 180, 24] }),
-      h("meshStandardMaterial" as any, { color: "#1C1C1C", roughness: 0.4, metalness: 0.2 }),
+      h("meshStandardMaterial" as any, {
+        color: HERO_3D_COLORS.ink,
+        roughness: 0.46,
+        metalness: 0.16,
+        emissive: "#050505",
+        emissiveIntensity: 0.08,
+      }),
     ),
   );
 }
@@ -57,7 +72,13 @@ function Sphere() {
       "mesh" as any,
       {},
       h("sphereGeometry" as any, { args: [0.55, 48, 48] }),
-      h("meshStandardMaterial" as any, { color: "#EAE6DF", roughness: 0.7, metalness: 0.05 }),
+      h("meshStandardMaterial" as any, {
+        color: HERO_3D_COLORS.cream,
+        roughness: 0.68,
+        metalness: 0.03,
+        emissive: "#f4f2ed",
+        emissiveIntensity: 0.12,
+      }),
     ),
   );
 }
@@ -115,9 +136,9 @@ function Scene() {
     Suspense,
     { fallback: null },
     h("color" as any, { attach: "background", args: ["#F4F2ED"] }),
-    h("ambientLight" as any, { intensity: 0.55 }),
-    h("directionalLight" as any, { position: [4, 4, 6], intensity: 0.9 }),
-    h("directionalLight" as any, { position: [-5, -2, 3], intensity: 0.25, color: "#FF4F00" }),
+    h("ambientLight" as any, { intensity: 0.92 }),
+    h("directionalLight" as any, { position: [4, 5, 6], intensity: 1.2, color: "#fff6ec" }),
+    h("directionalLight" as any, { position: [-5, -2, 3], intensity: 0.35, color: HERO_3D_COLORS.orangeGlow }),
     h(ResponsiveLayout),
   );
 }
