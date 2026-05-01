@@ -115,9 +115,9 @@ function Scene() {
     Suspense,
     { fallback: null },
     h("color" as any, { attach: "background", args: ["#F4F2ED"] }),
-    h("ambientLight" as any, { intensity: 0.8 }),
-    h("directionalLight" as any, { position: [4, 4, 6], intensity: 1.4 }),
-    h("directionalLight" as any, { position: [-5, -2, 3], intensity: 0.5, color: "#FF4F00" }),
+    h("ambientLight" as any, { intensity: 0.55 }),
+    h("directionalLight" as any, { position: [4, 4, 6], intensity: 0.9 }),
+    h("directionalLight" as any, { position: [-5, -2, 3], intensity: 0.25, color: "#FF4F00" }),
     h(ResponsiveLayout),
   );
 }
