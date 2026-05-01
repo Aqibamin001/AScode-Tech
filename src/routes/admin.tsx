@@ -2,6 +2,8 @@ import { createFileRoute, Link, Outlet, useNavigate, useRouterState } from "@tan
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
+const ADMIN_EMAIL = "aqibamin0099@gmail.com";
+
 export const Route = createFileRoute("/admin")({
   component: AdminLayout,
 });
@@ -17,6 +19,13 @@ function AdminLayout() {
       const { data: sess } = await supabase.auth.getSession();
       if (!sess.session) {
         navigate({ to: "/login" });
+        return;
+      }
+      // Single-admin allowlist: only the configured email may access /admin,
+      // even if other Supabase users somehow exist.
+      const userEmail = sess.session.user.email?.toLowerCase();
+      if (userEmail !== ADMIN_EMAIL) {
+        if (!cancelled) setState("denied");
         return;
       }
       const { data: roles } = await supabase
