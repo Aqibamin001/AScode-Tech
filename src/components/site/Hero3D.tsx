@@ -1,9 +1,9 @@
-import { createElement as h, Suspense, useEffect, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { createElement as h, Suspense, useEffect, useRef, useState } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Float, MeshDistortMaterial } from "@react-three/drei";
-import type { Mesh } from "three";
+import type { Mesh, Group } from "three";
 
-function Blob({ position = [0, 0, 0] as [number, number, number], color = "#FF4F00", scale = 1, speed = 1 }) {
+function Blob({ color = "#FF4F00", scale = 1, speed = 1 }: { color?: string; scale?: number; speed?: number }) {
   const ref = useRef<Mesh>(null);
   useFrame((state) => {
     if (!ref.current) return;
@@ -16,7 +16,7 @@ function Blob({ position = [0, 0, 0] as [number, number, number], color = "#FF4F
     { speed: 1.4, rotationIntensity: 0.6, floatIntensity: 1.2 },
     h(
       "mesh" as any,
-      { ref, position, scale },
+      { ref, scale },
       h("icosahedronGeometry" as any, { args: [1.2, 12] }),
       h(MeshDistortMaterial, {
         color,
@@ -29,7 +29,7 @@ function Blob({ position = [0, 0, 0] as [number, number, number], color = "#FF4F
   );
 }
 
-function Torus({ position = [2.4, -0.6, 0] as [number, number, number] }) {
+function Torus() {
   const ref = useRef<Mesh>(null);
   useFrame((state) => {
     if (!ref.current) return;
@@ -42,22 +42,70 @@ function Torus({ position = [2.4, -0.6, 0] as [number, number, number] }) {
     { speed: 1.1, rotationIntensity: 0.3, floatIntensity: 0.9 },
     h(
       "mesh" as any,
-      { ref, position },
+      { ref },
       h("torusKnotGeometry" as any, { args: [0.7, 0.22, 180, 24] }),
       h("meshStandardMaterial" as any, { color: "#1C1C1C", roughness: 0.4, metalness: 0.2 }),
     ),
   );
 }
 
-function Sphere({ position = [-2.6, 1.2, 0] as [number, number, number] }) {
+function Sphere() {
   return h(
     Float,
     { speed: 0.9, rotationIntensity: 0.2, floatIntensity: 1.4 },
     h(
       "mesh" as any,
-      { position },
-      h("sphereGeometry" as any, { args: [0.55, 64, 64] }),
+      {},
+      h("sphereGeometry" as any, { args: [0.55, 48, 48] }),
       h("meshStandardMaterial" as any, { color: "#EAE6DF", roughness: 0.7, metalness: 0.05 }),
+    ),
+  );
+}
+
+/**
+ * Viewport-aware layout. We read the live R3F viewport (in world units at z=0)
+ * and re-layout the three objects so they always frame the canvas nicely:
+ *  - phones: stacked, smaller, blob centered
+ *  - tablets/desktop: classic triangular composition
+ */
+function ResponsiveLayout() {
+  const groupRef = useRef<Group>(null);
+  const { viewport, camera } = useThree();
+  const w = viewport.width;
+  const isPhone = w < 6; // small viewport in three.js world units
+  const isTablet = w >= 6 && w < 9;
+
+  // Pull camera back on narrow viewports so blobs never get clipped.
+  useEffect(() => {
+    if (isPhone) camera.position.z = 6.4;
+    else if (isTablet) camera.position.z = 5.8;
+    else camera.position.z = 5.2;
+    camera.updateProjectionMatrix();
+  }, [isPhone, isTablet, camera]);
+
+  // Spread / scale based on viewport
+  const spreadX = isPhone ? 1.8 : isTablet ? 2.3 : 2.7;
+  const spreadY = isPhone ? 1.4 : isTablet ? 1.0 : 1.2;
+  const blobScale = isPhone ? 0.85 : isTablet ? 1.0 : 1.15;
+  const sideScale = isPhone ? 0.65 : isTablet ? 0.85 : 1;
+
+  return h(
+    "group" as any,
+    { ref: groupRef },
+    h(
+      "group" as any,
+      { position: [0, isPhone ? 0.2 : 0, 0] },
+      h(Blob, { scale: blobScale }),
+    ),
+    h(
+      "group" as any,
+      { position: [spreadX, -spreadY * 0.7, -0.5], scale: sideScale },
+      h(Torus),
+    ),
+    h(
+      "group" as any,
+      { position: [-spreadX, spreadY, -0.3], scale: sideScale },
+      h(Sphere),
     ),
   );
 }
@@ -70,15 +118,19 @@ function Scene() {
     h("ambientLight" as any, { intensity: 0.8 }),
     h("directionalLight" as any, { position: [4, 4, 6], intensity: 1.4 }),
     h("directionalLight" as any, { position: [-5, -2, 3], intensity: 0.5, color: "#FF4F00" }),
-    h(Blob, { position: [0, 0, 0], scale: 1.15 }),
-    h(Torus, { position: [2.6, -0.8, -0.5] }),
-    h(Sphere, { position: [-2.7, 1.2, -0.3] }),
+    h(ResponsiveLayout),
   );
 }
 
 export default function Hero3D() {
+  // Detect coarse pointer / small screens to lower DPR for perf.
+  const [dprMax, setDprMax] = useState(1.5);
   useEffect(() => {
-    // Signal the loader as soon as the canvas mounts on the next frame.
+    if (typeof window === "undefined") return;
+    const small = window.matchMedia("(max-width: 640px)").matches;
+    const coarse = window.matchMedia("(pointer: coarse)").matches;
+    setDprMax(small || coarse ? 1.25 : 1.5);
+
     const id = requestAnimationFrame(() => {
       window.dispatchEvent(new Event("ascode:hero-ready"));
     });
@@ -88,7 +140,7 @@ export default function Hero3D() {
     <div className="absolute inset-0">
       <Canvas
         camera={{ position: [0, 0, 5.2], fov: 42 }}
-        dpr={[1, 1.5]}
+        dpr={[1, dprMax]}
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
       >
         <Scene />
