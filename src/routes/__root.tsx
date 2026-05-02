@@ -3,7 +3,6 @@ import { Toaster } from "sonner";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import CookieBanner from "@/components/site/CookieBanner";
-import CustomCursor from "@/components/site/CustomCursor";
 import PageLoader from "@/components/site/PageLoader";
 
 import appCss from "../styles.css?url";
@@ -87,7 +86,6 @@ function RootComponent() {
   return (
     <main className="bg-cream-100">
       <PageLoader />
-      <CustomCursor />
       <div className="grain-overlay" aria-hidden />
       <Navbar />
       <Outlet />

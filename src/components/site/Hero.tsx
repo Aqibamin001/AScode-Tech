@@ -38,7 +38,7 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.35 }}
-            className="col-span-12 md:col-span-5 md:col-start-7 text-base sm:text-lg md:text-xl text-ink/80 max-w-md"
+            className="col-span-12 md:col-span-5 md:col-start-7 text-base sm:text-lg md:text-xl text-ink max-w-md font-medium bg-cream-100/85 backdrop-blur-sm rounded-md px-4 py-3 sm:px-5 sm:py-4 shadow-sm"
           >
             AScode Tech is an independent web development studio crafting fast,
             editorial, and conversion-obsessed digital experiences — from
