@@ -87,7 +87,6 @@ function RootComponent() {
   return (
     <main className="bg-cream-100">
       <PageLoader />
-      <CustomCursor />
       <div className="grain-overlay" aria-hidden />
       <Navbar />
       <Outlet />
