@@ -49,7 +49,7 @@ export const Route = createFileRoute("/api/public/setup-admin")({
           if (userId) {
             // Reset password + confirm email
             const { error: updErr } = await supabaseAdmin.auth.admin.updateUserById(userId, {
-              password: ADMIN_PASSWORD,
+              password: adminPassword,
               email_confirm: true,
             });
             if (updErr) throw updErr;
