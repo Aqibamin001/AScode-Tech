@@ -1,102 +1,115 @@
 import aqibImage from "@/assets/aqib.png";
 import saadImage from "@/assets/saad.png";
 
+// FormEasy
+import formeasyLanding from "@/assets/portfolio/formeasy/landing_page.png";
+import formeasyBuilder from "@/assets/portfolio/formeasy/form_builder_app.png";
+import formeasyPreview from "@/assets/portfolio/formeasy/form_preview_page.png";
+import formeasyResponses from "@/assets/portfolio/formeasy/responses_dashboard.png";
+import formeasySettings from "@/assets/portfolio/formeasy/settings_page.png";
+
+// LaunchFlow
+import launchflowHome from "@/assets/portfolio/launchflow/home_page_launchflow.png";
+import launchflowFeatures from "@/assets/portfolio/launchflow/features_page_launchflow.png";
+import launchflowPricing from "@/assets/portfolio/launchflow/pricing_page_launchflow.png";
+import launchflowBlog from "@/assets/portfolio/launchflow/blog_page_launchflow.png";
+import launchflowContact from "@/assets/portfolio/launchflow/contact_page_launchflow.png";
+
+// ListingPro
+import listingproHome from "@/assets/portfolio/listingpro/listingpro_homepage.png";
+import listingproSearch from "@/assets/portfolio/listingpro/listingpro_property_search.png";
+import listingproDetails from "@/assets/portfolio/listingpro/listingpro_property_details.png";
+import listingproAgent from "@/assets/portfolio/listingpro/listingpro_agent_profile.png";
+import listingproContact from "@/assets/portfolio/listingpro/listingpro_contact_inquiry.png";
+
+// Boutique
+import boutiqueHome from "@/assets/portfolio/boutique/homepage.png";
+import boutiqueShop from "@/assets/portfolio/boutique/shop_collection.png";
+import boutiqueProduct from "@/assets/portfolio/boutique/product_detail.png";
+import boutiqueCart from "@/assets/portfolio/boutique/shopping_cart.png";
+import boutiqueCheckout from "@/assets/portfolio/boutique/checkout.png";
+import boutiqueOrder from "@/assets/portfolio/boutique/order_confirmation.png";
+
+// Voice
+import voiceHome from "@/assets/portfolio/voice/home_voiceflow.png";
+import voiceHow from "@/assets/portfolio/voice/how_it_works_voiceflow.png";
+import voiceAnalyzer from "@/assets/portfolio/voice/voice_search_analyzer_voiceflow.png";
+import voicePackage from "@/assets/portfolio/voice/package_builder_voiceflow.png";
+import voiceCase from "@/assets/portfolio/voice/case_studies_voiceflow.png";
+
+// Menu
+import menuLanding from "@/assets/portfolio/menu/restaurant_landing_menu_home.png";
+import menuCategory from "@/assets/portfolio/menu/menu_category_page.png";
+import menuItem from "@/assets/portfolio/menu/single_item_modal.png";
+import menuQR from "@/assets/portfolio/menu/qr_code_landing.png";
+import menuAdmin from "@/assets/portfolio/menu/admin_dashboard.png";
+
 export const PROJECTS = [
   {
-    id: "project-1",
-    title: "Fintech SaaS Dashboard",
-    type: "Web App · SaaS",
+    id: "launchflow",
+    title: "LaunchFlow — Modern SaaS Website",
+    type: "SaaS · Marketing Site",
     year: "2025",
     summary:
-      "A real-time analytics dashboard for a Karachi-based fintech. Focused on clarity, accessibility and sub-second interactions.",
-    stack: ["React", "Next.js", "D3", "Postgres"],
-    cover:
-      "https://images.unsplash.com/photo-1772272935464-2e90d8218987?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1772272935464-2e90d8218987?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-      "https://images.unsplash.com/photo-1642132652866-6fa262d3161f?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-      "https://images.unsplash.com/photo-1642132652860-471b4228023e?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-    ],
+      "A modern marketing site for a SaaS launch platform — home, features, pricing, blog and contact built with conversion-first layouts.",
+    stack: ["Next.js", "Tailwind", "Framer Motion"],
+    cover: launchflowHome,
+    images: [launchflowHome, launchflowFeatures, launchflowPricing, launchflowBlog, launchflowContact],
   },
   {
-    id: "project-2",
-    title: "Modern E-Commerce Store",
+    id: "listingpro",
+    title: "ListingPro — Luxury Real Estate",
+    type: "Real Estate · Web App",
+    year: "2025",
+    summary:
+      "An editorial luxury real-estate platform with rich property search, detail pages, agent profiles and inquiry flows.",
+    stack: ["Next.js", "Postgres", "Mapbox"],
+    cover: listingproHome,
+    images: [listingproHome, listingproSearch, listingproDetails, listingproAgent, listingproContact],
+  },
+  {
+    id: "boutique",
+    title: "Modern Luxury Editorial Boutique",
     type: "E-Commerce",
     year: "2025",
     summary:
-      "A headless commerce build with custom checkout, subscription flows and a 98+ Lighthouse score.",
+      "A minimalist editorial boutique with cinematic product storytelling, custom cart and a refined checkout experience.",
     stack: ["Next.js", "Shopify Hydrogen", "Stripe"],
-    cover:
-      "https://images.unsplash.com/photo-1648134859196-3aa762e9440d?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1648134859196-3aa762e9440d?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-      "https://images.unsplash.com/photo-1657812159075-7f0abd98f7b8?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-      "https://images.unsplash.com/photo-1648134859177-66e35b61e106?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-    ],
+    cover: boutiqueHome,
+    images: [boutiqueHome, boutiqueShop, boutiqueProduct, boutiqueCart, boutiqueCheckout, boutiqueOrder],
   },
   {
-    id: "project-3",
-    title: "Corporate Intelligence Platform",
-    type: "Business Website",
-    year: "2024",
+    id: "formeasy",
+    title: "FormEasy — Form Builder",
+    type: "SaaS · Web App",
+    year: "2025",
     summary:
-      "A content-rich marketing site and client portal for an enterprise consultancy. Built for speed and SEO.",
-    stack: ["Next.js", "Sanity CMS", "Vercel"],
-    cover:
-      "https://images.unsplash.com/photo-1762340275704-d0e31637286a?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1762340275704-d0e31637286a?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-      "https://images.unsplash.com/photo-1642132652860-471b4228023e?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-      "https://images.unsplash.com/photo-1642132652809-8c6ab1971169?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-    ],
+      "A drag-and-drop form builder with live preview, response dashboard and granular settings — built for fast iteration.",
+    stack: ["React", "TypeScript", "Supabase"],
+    cover: formeasyLanding,
+    images: [formeasyLanding, formeasyBuilder, formeasyPreview, formeasyResponses, formeasySettings],
   },
   {
-    id: "project-4",
-    title: "Creative Agency Landing Page",
-    type: "Portfolio · Landing",
-    year: "2024",
+    id: "voiceflow",
+    title: "VoiceFlow — Voice Search Optimization",
+    type: "SaaS · Marketing",
+    year: "2025",
     summary:
-      "A bold editorial landing experience with heavy motion, WebGL accents and a custom CMS.",
-    stack: ["React", "GSAP", "Three.js"],
-    cover:
-      "https://images.unsplash.com/photo-1642132652809-8c6ab1971169?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1642132652809-8c6ab1971169?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-      "https://images.unsplash.com/photo-1642132652860-603f4e3c19b7?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-      "https://images.unsplash.com/photo-1772272935464-2e90d8218987?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-    ],
+      "A platform for optimizing brands for voice search — analyzer, package builder and case study showcase.",
+    stack: ["Next.js", "Node", "OpenAI"],
+    cover: voiceHome,
+    images: [voiceHome, voiceHow, voiceAnalyzer, voicePackage, voiceCase],
   },
   {
-    id: "project-5",
-    title: "Boutique Fashion Web Store",
-    type: "E-Commerce",
-    year: "2024",
+    id: "warm-menu",
+    title: "Warm & Organic Digital Menu",
+    type: "Hospitality · Web App",
+    year: "2025",
     summary:
-      "A minimalist fashion boutique with cinematic product storytelling and custom 3D product viewer.",
-    stack: ["Next.js", "Three.js", "Stripe"],
-    cover:
-      "https://images.unsplash.com/photo-1648134859177-66e35b61e106?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1648134859177-66e35b61e106?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-      "https://images.unsplash.com/photo-1634084462412-b54873c0a56d?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-      "https://images.unsplash.com/photo-1648134859196-3aa762e9440d?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-    ],
-  },
-  {
-    id: "project-6",
-    title: "Web3 Developer Framework",
-    type: "Business Website",
-    year: "2023",
-    summary:
-      "A documentation-first developer site with interactive code playgrounds and auto-generated API refs.",
-    stack: ["Next.js", "MDX", "Algolia"],
-    cover:
-      "https://images.unsplash.com/photo-1634084462412-b54873c0a56d?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-    images: [
-      "https://images.unsplash.com/photo-1634084462412-b54873c0a56d?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-      "https://images.unsplash.com/photo-1762340275704-d0e31637286a?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-      "https://images.unsplash.com/photo-1642132652866-6fa262d3161f?crop=entropy&cs=srgb&fm=jpg&w=1600&q=85",
-    ],
+      "A warm, organic digital menu for restaurants — QR landing, category browse, item modal and admin dashboard.",
+    stack: ["React", "Tailwind", "Supabase"],
+    cover: menuLanding,
+    images: [menuLanding, menuCategory, menuItem, menuQR, menuAdmin],
   },
 ];
 
