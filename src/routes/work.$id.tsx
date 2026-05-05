@@ -28,7 +28,7 @@ export const Route = createFileRoute("/work/$id")({
 });
 
 function WorkPreview() {
-  const { project } = Route.useLoaderData();
+  const { project } = Route.useLoaderData() as { project: Project };
   const [idx, setIdx] = useState(0);
   const [zoom, setZoom] = useState(false);
 
