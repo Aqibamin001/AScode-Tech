@@ -20,6 +20,7 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as WorkIdRouteImport } from './routes/work.$id'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AdminMessagesRouteImport } from './routes/admin.messages'
 import { Route as AdminPostsIndexRouteImport } from './routes/admin.posts.index'
@@ -83,6 +84,11 @@ const AdminIndexRoute = AdminIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AdminRoute,
 } as any)
+const WorkIdRoute = WorkIdRouteImport.update({
+  id: '/work/$id',
+  path: '/work/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
@@ -131,6 +137,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/messages': typeof AdminMessagesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/work/$id': typeof WorkIdRoute
   '/admin/': typeof AdminIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/admin/posts/$id': typeof AdminPostsIdRoute
@@ -150,6 +157,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/messages': typeof AdminMessagesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/work/$id': typeof WorkIdRoute
   '/admin': typeof AdminIndexRoute
   '/blog': typeof BlogIndexRoute
   '/admin/posts/$id': typeof AdminPostsIdRoute
@@ -171,6 +179,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/messages': typeof AdminMessagesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/work/$id': typeof WorkIdRoute
   '/admin/': typeof AdminIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/admin/posts/$id': typeof AdminPostsIdRoute
@@ -193,6 +202,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin/messages'
     | '/blog/$slug'
+    | '/work/$id'
     | '/admin/'
     | '/blog/'
     | '/admin/posts/$id'
@@ -212,6 +222,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin/messages'
     | '/blog/$slug'
+    | '/work/$id'
     | '/admin'
     | '/blog'
     | '/admin/posts/$id'
@@ -232,6 +243,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin/messages'
     | '/blog/$slug'
+    | '/work/$id'
     | '/admin/'
     | '/blog/'
     | '/admin/posts/$id'
@@ -252,6 +264,7 @@ export interface RootRouteChildren {
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  WorkIdRoute: typeof WorkIdRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ApiPublicBootstrapAdminRoute: typeof ApiPublicBootstrapAdminRoute
   ApiPublicSetupAdminRoute: typeof ApiPublicSetupAdminRoute
@@ -336,6 +349,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminIndexRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/work/$id': {
+      id: '/work/$id'
+      path: '/work/$id'
+      fullPath: '/work/$id'
+      preLoaderRoute: typeof WorkIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/blog/$slug'
@@ -417,6 +437,7 @@ const rootRouteChildren: RootRouteChildren = {
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,
+  WorkIdRoute: WorkIdRoute,
   BlogIndexRoute: BlogIndexRoute,
   ApiPublicBootstrapAdminRoute: ApiPublicBootstrapAdminRoute,
   ApiPublicSetupAdminRoute: ApiPublicSetupAdminRoute,
@@ -424,12 +445,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

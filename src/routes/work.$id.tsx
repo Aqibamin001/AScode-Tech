@@ -2,6 +2,8 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
 import { PROJECTS } from "@/data/portfolio";
 
+type Project = (typeof PROJECTS)[number];
+
 export const Route = createFileRoute("/work/$id")({
   component: WorkPreview,
   notFoundComponent: () => (
