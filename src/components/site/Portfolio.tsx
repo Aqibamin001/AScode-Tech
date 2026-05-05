@@ -43,7 +43,7 @@ export default function Portfolio() {
                     src={p.cover}
                     alt={p.title}
                     loading="lazy"
-                    className="w-full h-full object-contain transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
+                    className="w-full h-full object-cover object-top transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/20 transition-colors duration-500" />
                   <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3 text-cream-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
