@@ -1,115 +1,43 @@
 import aqibImage from "@/assets/aqib.png";
 import saadImage from "@/assets/saad.png";
 
-// FormEasy
-import formeasyLanding from "@/assets/portfolio/formeasy/landing_page.png";
-import formeasyBuilder from "@/assets/portfolio/formeasy/form_builder_app.png";
-import formeasyPreview from "@/assets/portfolio/formeasy/form_preview_page.png";
-import formeasyResponses from "@/assets/portfolio/formeasy/responses_dashboard.png";
-import formeasySettings from "@/assets/portfolio/formeasy/settings_page.png";
-
-// LaunchFlow
-import launchflowHome from "@/assets/portfolio/launchflow/home_page_launchflow.png";
-import launchflowFeatures from "@/assets/portfolio/launchflow/features_page_launchflow.png";
-import launchflowPricing from "@/assets/portfolio/launchflow/pricing_page_launchflow.png";
-import launchflowBlog from "@/assets/portfolio/launchflow/blog_page_launchflow.png";
-import launchflowContact from "@/assets/portfolio/launchflow/contact_page_launchflow.png";
-
-// ListingPro
-import listingproHome from "@/assets/portfolio/listingpro/listingpro_homepage.png";
-import listingproSearch from "@/assets/portfolio/listingpro/listingpro_property_search.png";
-import listingproDetails from "@/assets/portfolio/listingpro/listingpro_property_details.png";
-import listingproAgent from "@/assets/portfolio/listingpro/listingpro_agent_profile.png";
-import listingproContact from "@/assets/portfolio/listingpro/listingpro_contact_inquiry.png";
-
-// Boutique
-import boutiqueHome from "@/assets/portfolio/boutique/homepage.png";
-import boutiqueShop from "@/assets/portfolio/boutique/shop_collection.png";
-import boutiqueProduct from "@/assets/portfolio/boutique/product_detail.png";
-import boutiqueCart from "@/assets/portfolio/boutique/shopping_cart.png";
-import boutiqueCheckout from "@/assets/portfolio/boutique/checkout.png";
-import boutiqueOrder from "@/assets/portfolio/boutique/order_confirmation.png";
-
-// Voice
-import voiceHome from "@/assets/portfolio/voice/home_voiceflow.png";
-import voiceHow from "@/assets/portfolio/voice/how_it_works_voiceflow.png";
-import voiceAnalyzer from "@/assets/portfolio/voice/voice_search_analyzer_voiceflow.png";
-import voicePackage from "@/assets/portfolio/voice/package_builder_voiceflow.png";
-import voiceCase from "@/assets/portfolio/voice/case_studies_voiceflow.png";
-
-// Menu
-import menuLanding from "@/assets/portfolio/menu/restaurant_landing_menu_home.png";
-import menuCategory from "@/assets/portfolio/menu/menu_category_page.png";
-import menuItem from "@/assets/portfolio/menu/single_item_modal.png";
-import menuQR from "@/assets/portfolio/menu/qr_code_landing.png";
-import menuAdmin from "@/assets/portfolio/menu/admin_dashboard.png";
+import resumegrowCover from "@/assets/portfolio/new/resumegrow.png";
+import bizplanCover from "@/assets/portfolio/new/bizplan-ai.png";
+import cvbuilderCover from "@/assets/portfolio/new/cvbuilder.png";
 
 export const PROJECTS = [
   {
-    id: "launchflow",
-    title: "LaunchFlow — Modern SaaS Website",
-    type: "SaaS · Marketing Site",
+    id: "resumegrow",
+    title: "ResumeGrow — Land Your Dream Job Faster",
+    type: "SaaS · Career Platform",
     year: "2025",
     summary:
-      "A modern marketing site for a SaaS launch platform — home, features, pricing, blog and contact built with conversion-first layouts.",
-    stack: ["Next.js", "Tailwind", "Framer Motion"],
-    cover: launchflowHome,
-    images: [launchflowHome, launchflowFeatures, launchflowPricing, launchflowBlog, launchflowContact],
+      "An all-in-one resume platform with free ATS scoring, expert resume writing and LinkedIn optimization — trusted by 50,000+ professionals.",
+    stack: ["Next.js", "AI", "Tailwind"],
+    cover: resumegrowCover,
+    url: "https://resumegrow.com",
   },
   {
-    id: "listingpro",
-    title: "ListingPro — Luxury Real Estate",
-    type: "Real Estate · Web App",
+    id: "bizplan-ai",
+    title: "BizPlan AI — Investor-Ready Business Plans",
+    type: "SaaS · AI Tool",
     year: "2025",
     summary:
-      "An editorial luxury real-estate platform with rich property search, detail pages, agent profiles and inquiry flows.",
-    stack: ["Next.js", "Postgres", "Mapbox"],
-    cover: listingproHome,
-    images: [listingproHome, listingproSearch, listingproDetails, listingproAgent, listingproContact],
+      "Generate complete investor-ready business plans, financial projections, market research and growth strategies in minutes — not weeks.",
+    stack: ["React", "OpenAI", "Cloudflare Workers"],
+    cover: bizplanCover,
+    url: "https://bizplan-ai.tiktok00009998.workers.dev/",
   },
   {
-    id: "boutique",
-    title: "Modern Luxury Editorial Boutique",
-    type: "E-Commerce",
+    id: "cvbuilder-ai",
+    title: "CVBuilder AI — Turn Experience Into Opportunities",
+    type: "SaaS · Career Platform",
     year: "2025",
     summary:
-      "A minimalist editorial boutique with cinematic product storytelling, custom cart and a refined checkout experience.",
-    stack: ["Next.js", "Shopify Hydrogen", "Stripe"],
-    cover: boutiqueHome,
-    images: [boutiqueHome, boutiqueShop, boutiqueProduct, boutiqueCart, boutiqueCheckout, boutiqueOrder],
-  },
-  {
-    id: "formeasy",
-    title: "FormEasy — Form Builder",
-    type: "SaaS · Web App",
-    year: "2025",
-    summary:
-      "A drag-and-drop form builder with live preview, response dashboard and granular settings — built for fast iteration.",
-    stack: ["React", "TypeScript", "Supabase"],
-    cover: formeasyLanding,
-    images: [formeasyLanding, formeasyBuilder, formeasyPreview, formeasyResponses, formeasySettings],
-  },
-  {
-    id: "voiceflow",
-    title: "VoiceFlow — Voice Search Optimization",
-    type: "SaaS · Marketing",
-    year: "2025",
-    summary:
-      "A platform for optimizing brands for voice search — analyzer, package builder and case study showcase.",
-    stack: ["Next.js", "Node", "OpenAI"],
-    cover: voiceHome,
-    images: [voiceHome, voiceHow, voiceAnalyzer, voicePackage, voiceCase],
-  },
-  {
-    id: "warm-menu",
-    title: "Warm & Organic Digital Menu",
-    type: "Hospitality · Web App",
-    year: "2025",
-    summary:
-      "A warm, organic digital menu for restaurants — QR landing, category browse, item modal and admin dashboard.",
-    stack: ["React", "Tailwind", "Supabase"],
-    cover: menuLanding,
-    images: [menuLanding, menuCategory, menuItem, menuQR, menuAdmin],
+      "Build ATS-optimized resumes, generate personalized cover letters and prep for interviews with AI-powered career tools.",
+    stack: ["React", "AI", "Cloudflare Workers"],
+    cover: cvbuilderCover,
+    url: "https://cvbuilder.saadshakoor786sr-e37.workers.dev/",
   },
 ];
 
