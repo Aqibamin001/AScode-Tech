@@ -19,16 +19,14 @@ export default function Portfolio() {
         <div className="grid grid-cols-12 gap-6 md:gap-8">
           {PROJECTS.map((p, i) => {
             const span =
-              i % 5 === 0 ? "md:col-span-8"
-              : i % 5 === 1 ? "md:col-span-4"
-              : i % 5 === 2 ? "md:col-span-5"
-              : i % 5 === 3 ? "md:col-span-7"
-              : "md:col-span-6";
+              i % 3 === 0 ? "md:col-span-8"
+              : i % 3 === 1 ? "md:col-span-4"
+              : "md:col-span-12";
 
             return (
               <motion.a
                 key={p.id}
-                href={`/work/${p.id}`}
+                href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
@@ -47,7 +45,7 @@ export default function Portfolio() {
                   />
                   <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/20 transition-colors duration-500" />
                   <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3 text-cream-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <span className="text-xs uppercase tracking-widest">Open preview ({p.images.length}) ↗</span>
+                    <span className="text-xs uppercase tracking-widest">Visit site ↗</span>
                   </div>
                 </div>
                 <div className="mt-4 flex items-baseline justify-between gap-4">
