@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/ServicePage";
-import { Code, FigmaLogo, PaperPlaneTilt, Puzzle, PuzzlePiece, Storefront, WordpressLogo } from "@phosphor-icons/react";
+import { Code, FigmaLogo, PaperPlaneTilt, Puzzle, PuzzlePiece, Storefront, Globe } from "@phosphor-icons/react";
 
 export const Route = createFileRoute("/services/plugin-development")({
   head: () => ({
@@ -24,12 +24,12 @@ function Page() {
       bullets={["WordPress & WooCommerce plugins", "Shopify apps (public & private)", "Chrome & Firefox extensions", "Figma & VS Code plugins", "Slack, Notion & Zapier apps", "Marketplace submission support"]}
       stack={["PHP", "JavaScript", "TypeScript", "React", "Shopify Polaris", "Chrome MV3", "Figma API", "VS Code API"]}
       features={[
-    { icon: WordpressLogo, title: "WordPress Plugins", body: "Custom blocks, integrations and WooCommerce extensions." },
-    { icon: Storefront, title: "Shopify Apps", body: "Embedded admin apps, theme extensions and checkout UI." },
-    { icon: PuzzlePiece, title: "Browser Extensions", body: "Chrome, Edge & Firefox extensions with MV3 compliance." },
-    { icon: FigmaLogo, title: "Figma Plugins", body: "Design tooling that ships inside Figma's plugin runtime." },
-    { icon: Code, title: "IDE Extensions", body: "VS Code & JetBrains plugins for developer productivity." },
-    { icon: PaperPlaneTilt, title: "Marketplace Launch", body: "We handle review, submission and ongoing updates." }
+{ icon: Globe, title: "WordPress Plugins", body: "Custom blocks, integrations and WooCommerce extensions." },
+  { icon: Storefront, title: "Shopify Apps", body: "Embedded admin apps, theme extensions and checkout UI." },
+  { icon: PuzzlePiece, title: "Browser Extensions", body: "Chrome, Edge & Firefox extensions with MV3 compliance." },
+  { icon: FigmaLogo, title: "Figma Plugins", body: "Design tooling that ships inside Figma's plugin runtime." },
+  { icon: Code, title: "IDE Extensions", body: "VS Code & JetBrains plugins for developer productivity." },
+  { icon: PaperPlaneTilt, title: "Marketplace Launch", body: "We handle review, submission and ongoing updates." },
       ]}
       process={[
     { n: "01", t: "Discover", d: "We dig into your goals, audience and constraints to scope the work." },
