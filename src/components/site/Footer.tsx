@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="col-span-6 md:col-span-2 text-sm text-cream-100/70 space-y-2">
             <p className="text-cream-100 font-semibold mb-2">Studio</p>
             <a href="/#work" className="block hover:text-orange-ascode">Work</a>
-            <a href="/#services" className="block hover:text-orange-ascode">Services</a>
+            <Link to="/services" className="block hover:text-orange-ascode">Services</Link>
             <a href="/#team" className="block hover:text-orange-ascode">Team</a>
             <Link to="/blog" className="block hover:text-orange-ascode">Blog</Link>
           </div>

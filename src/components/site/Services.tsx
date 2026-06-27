@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { SERVICES } from "@/data/portfolio";
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
+import { SERVICES } from "@/data/services";
 
 export default function Services() {
-  const [active, setActive] = useState(SERVICES[0].id);
-  const activeItem = SERVICES.find((s) => s.id === active)!;
+  const [active, setActive] = useState(SERVICES[0].slug);
+  const activeItem = SERVICES.find((s) => s.slug === active)!;
 
   return (
     <section id="services" className="relative bg-cream-100 py-16 sm:py-24 md:py-36 border-t border-cream-300">
@@ -18,7 +19,7 @@ export default function Services() {
           <h2 className="col-span-12 md:col-span-7 h-editorial text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem]">
             A full-stack
             <br />
-            web studio<span className="text-orange-ascode">.</span>
+            digital studio<span className="text-orange-ascode">.</span>
           </h2>
         </div>
 
@@ -27,31 +28,44 @@ export default function Services() {
             <ul className="divide-y divide-cream-300 border-t border-cream-300">
               {SERVICES.map((s) => (
                 <li
-                  key={s.id}
-                  onMouseEnter={() => setActive(s.id)}
-                  className="group cursor-pointer"
+                  key={s.slug}
+                  onMouseEnter={() => setActive(s.slug)}
+                  className="group"
                   data-cursor-hover="true"
                 >
-                  <div className="py-6 md:py-8 flex items-baseline gap-6 md:gap-10 transition-colors">
+                  <Link
+                    to="/services/$slug"
+                    params={{ slug: s.slug }}
+                    className="block py-6 md:py-8 flex items-baseline gap-6 md:gap-10 transition-colors"
+                  >
                     <span className="font-mono text-xs text-ink/50 w-10 shrink-0">{s.number}</span>
                     <div className="flex-1 flex items-baseline justify-between gap-6 flex-wrap">
                       <h3
                         className={`font-display text-2xl md:text-4xl tracking-tight transition-colors ${
-                          active === s.id ? "text-orange-ascode" : "text-ink group-hover:text-orange-ascode"
+                          active === s.slug ? "text-orange-ascode" : "text-ink group-hover:text-orange-ascode"
                         }`}
                       >
                         {s.title}
                       </h3>
-                      <span className="text-sm text-ink/60">{s.tags.join(" · ")}</span>
+                      <span className="text-sm text-ink/60">{s.tags.slice(0, 3).join(" · ")}</span>
                     </div>
-                  </div>
+                  </Link>
                 </li>
               ))}
             </ul>
+
+            <div className="mt-10">
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-cream-50 text-sm font-medium hover:bg-orange-ascode transition-colors"
+              >
+                View all services →
+              </Link>
+            </div>
           </div>
 
           <motion.div
-            key={activeItem.id}
+            key={activeItem.slug}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -66,7 +80,7 @@ export default function Services() {
                 <h4 className="mt-4 font-display text-3xl md:text-4xl tracking-tight">
                   {activeItem.title}
                 </h4>
-                <p className="mt-4 text-ink/75 leading-relaxed">{activeItem.desc}</p>
+                <p className="mt-4 text-ink/75 leading-relaxed">{activeItem.short}</p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {activeItem.tags.map((t) => (
                     <span key={t} className="px-3 py-1 text-xs border border-ink/30 rounded-full">
@@ -74,12 +88,13 @@ export default function Services() {
                     </span>
                   ))}
                 </div>
-                <a
-                  href="#contact"
+                <Link
+                  to="/services/$slug"
+                  params={{ slug: activeItem.slug }}
                   className="mt-8 inline-flex items-center gap-2 text-sm font-medium link-underline"
                 >
-                  Get a quote for {activeItem.title.toLowerCase()} →
-                </a>
+                  Explore {activeItem.title.toLowerCase()} →
+                </Link>
               </div>
             </div>
           </motion.div>
