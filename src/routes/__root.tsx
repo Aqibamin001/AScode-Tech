@@ -40,8 +40,8 @@ export const Route = createRootRoute({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "AScode Tech — Independent Web Development Studio" },
       { name: "twitter:description", content: "AScode Tech crafts fast, editorial, conversion-obsessed websites and web apps — from corporate sites to SaaS dashboards." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4c8b146d-241f-4b5d-90c0-1d9a86e00222/id-preview-78dbb52c--3b0ce70a-dcfa-496a-9de5-8b443f61ca7c.lovable.app-1777668963971.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4c8b146d-241f-4b5d-90c0-1d9a86e00222/id-preview-78dbb52c--3b0ce70a-dcfa-496a-9de5-8b443f61ca7c.lovable.app-1777668963971.png" },
+      { property: "og:image", content: "https://as-code.tech/as-code.tech_.png" },
+      { name: "twitter:image", content: "https://as-code.tech/as-code.tech_.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
