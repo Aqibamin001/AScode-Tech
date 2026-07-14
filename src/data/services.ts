@@ -63,7 +63,7 @@ export const SERVICES: Service[] = [
       { q: "How long does a website take?", a: "Marketing sites: 3–5 weeks. E-commerce / multi-region: 6–10 weeks." },
       { q: "Do you handle copy & content?", a: "Yes — we partner with strategists and can deliver copy, photography and video." },
     ],
-    pricing: { label: "Starts at", price: "$2,500", note: "Fixed-scope projects · monthly retainers available" },
+    pricing: { label: "Starts at", price: "$250", note: "Fixed-scope projects · monthly retainers available" },
   },
   {
     slug: "app-development",
@@ -104,7 +104,7 @@ export const SERVICES: Service[] = [
       { q: "Do you publish to the stores?", a: "Yes — we handle Apple/Google review, screenshots, and metadata." },
       { q: "Native or cross-platform?", a: "We recommend React Native or Flutter unless you need heavy native (AR, ARKit, advanced camera)." },
     ],
-    pricing: { label: "Starts at", price: "$8,000", note: "MVP in 6–10 weeks · retainers for growth phase" },
+    pricing: { label: "Starts at", price: "$800", note: "MVP in 6–10 weeks · retainers for growth phase" },
   },
   {
     slug: "automation-services",
@@ -144,7 +144,7 @@ export const SERVICES: Service[] = [
       { q: "Where are automations hosted?", a: "Self-hosted n8n on your infra, or managed Make / Zapier — your call." },
       { q: "Can you replace an existing Zapier mess?", a: "Yes — we frequently rebuild fragile Zap chains into proper n8n / code." },
     ],
-    pricing: { label: "Starts at", price: "$1,500", note: "Per workflow · retainer pricing for ongoing ops" },
+    pricing: { label: "Starts at", price: "$150", note: "Per workflow · retainer pricing for ongoing ops" },
   },
   {
     slug: "seo-services",
@@ -185,7 +185,7 @@ export const SERVICES: Service[] = [
       { q: "When will I see results?", a: "Technical wins land in weeks; content compounds at 3–6 months." },
       { q: "Do you guarantee rankings?", a: "No one credible does. We guarantee work, transparency and reporting." },
     ],
-    pricing: { label: "Starts at", price: "$1,200/mo", note: "3-month minimum · technical audits one-off" },
+    pricing: { label: "Starts at", price: "$150/mo", note: "3-month minimum · technical audits one-off" },
   },
   {
     slug: "digital-marketing",
@@ -225,7 +225,7 @@ export const SERVICES: Service[] = [
       { q: "Do you manage creative?", a: "Yes — static, motion and UGC briefs, with optional production." },
       { q: "Minimum ad spend?", a: "We typically work with brands spending $5k+/mo so testing is meaningful." },
     ],
-    pricing: { label: "Starts at", price: "$2,000/mo", note: "+ ad spend · 3-month minimum engagement" },
+    pricing: { label: "Starts at", price: "$250/mo", note: "+ ad spend · 3-month minimum engagement" },
   },
   {
     slug: "content-creation",
@@ -265,7 +265,7 @@ export const SERVICES: Service[] = [
       { q: "Do you ghostwrite for founders?", a: "Yes — interview-based ghostwriting for LinkedIn, X and long-form." },
       { q: "Can you film on location?", a: "Yes — we partner with crews in Lahore, Karachi, Dubai, London, NYC." },
     ],
-    pricing: { label: "Starts at", price: "$1,800/mo", note: "Retainer · scope flexes with format mix" },
+    pricing: { label: "Starts at", price: "$200/mo", note: "Retainer · scope flexes with format mix" },
   },
   {
     slug: "custom-bots",
@@ -305,7 +305,7 @@ export const SERVICES: Service[] = [
       { q: "Which model do you use?", a: "Whatever fits — GPT-4.1/5, Claude, Gemini, or open-source self-hosted." },
       { q: "Can the bot take actions?", a: "Yes — function calling against your APIs with full audit logs." },
     ],
-    pricing: { label: "Starts at", price: "$3,000", note: "MVP in 2–4 weeks · monthly hosting + iteration" },
+    pricing: { label: "Starts at", price: "$150", note: "MVP in 2–4 weeks · monthly hosting + iteration" },
   },
   {
     slug: "trading-bots",
@@ -345,7 +345,7 @@ export const SERVICES: Service[] = [
       { q: "Do you provide strategies?", a: "No — we build systems around your strategy or research." },
       { q: "What about risk?", a: "Every system ships with position limits, kill-switches and alerts." },
     ],
-    pricing: { label: "Starts at", price: "$5,000", note: "Per strategy · monthly infra + maintenance separate" },
+    pricing: { label: "Starts at", price: "$400", note: "Per strategy · monthly infra + maintenance separate" },
   },
   {
     slug: "trending-bots",
@@ -385,7 +385,7 @@ export const SERVICES: Service[] = [
       { q: "Will you build anything?", a: "No. We decline projects that are clearly illegal or harmful." },
       { q: "Latency?", a: "We deploy on bare metal or low-latency regions where it matters." },
     ],
-    pricing: { label: "Starts at", price: "$4,000", note: "Scope-dependent · niche bots quoted per brief" },
+    pricing: { label: "Starts at", price: "$500", note: "Scope-dependent · niche bots quoted per brief" },
   },
   {
     slug: "custom-plugins",
@@ -465,7 +465,7 @@ export const SERVICES: Service[] = [
       { q: "On-prem / private models?", a: "Yes — we deploy Llama / Qwen on your infra with vLLM." },
       { q: "How do you stop hallucinations?", a: "Retrieval + citations + evals + UI affordances. No magic." },
     ],
-    pricing: { label: "Starts at", price: "$4,500", note: "Per feature · ongoing eval retainers available" },
+    pricing: { label: "Starts at", price: "$600", note: "Per feature · ongoing eval retainers available" },
   },
   {
     slug: "ui-ux-design",
@@ -505,7 +505,7 @@ export const SERVICES: Service[] = [
       { q: "Do you also build?", a: "Yes — and most clients use the same team to design and build." },
       { q: "Can you work inside our Figma?", a: "Yes — we are happy to embed in your existing system." },
     ],
-    pricing: { label: "Starts at", price: "$3,500", note: "Per sprint · retainer for ongoing product design" },
+    pricing: { label: "Starts at", price: "$250", note: "Per sprint · retainer for ongoing product design" },
   },
   {
     slug: "maintenance-support",
@@ -545,7 +545,7 @@ export const SERVICES: Service[] = [
       { q: "Do you take over from another agency?", a: "Yes — we do clean handovers including code & infra audit." },
       { q: "Minimum commitment?", a: "3 months, month-to-month thereafter." },
     ],
-    pricing: { label: "Starts at", price: "$1,500/mo", note: "Hours bank · scales with engineering load" },
+    pricing: { label: "Starts at", price: "$100/mo", note: "Hours bank · scales with engineering load" },
   },
 ];
 
