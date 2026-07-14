@@ -425,7 +425,7 @@ export const SERVICES: Service[] = [
       { q: "Do you handle review submissions?", a: "Yes — including responding to reviewer comments." },
       { q: "Can you take over a legacy plugin?", a: "Often yes — we audit first and quote rewrite vs maintain." },
     ],
-    pricing: { label: "Starts at", price: "$3,500", note: "Per plugin · maintenance retainer optional" },
+    pricing: { label: "Starts at", price: "$400", note: "Per plugin · maintenance retainer optional" },
   },
   {
     slug: "ai-integration",
