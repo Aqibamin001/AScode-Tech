@@ -72,14 +72,7 @@ export default function Services() {
                   ))}
                 </div>
 
-                <div className="relative mt-7 pt-5 border-t border-cream-300 flex items-center justify-between">
-                  <span className="text-[11px] uppercase tracking-[0.2em] text-ink/50">
-                    {s.pricing.label}
-                  </span>
-                  <span className="font-display text-lg text-ink group-hover:text-orange-ascode transition-colors">
-                    {s.pricing.price}
-                  </span>
-                </div>
+
               </Link>
             </motion.div>
           ))}
