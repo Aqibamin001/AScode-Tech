@@ -123,15 +123,6 @@ function ServiceDetail() {
                     </span>
                   ))}
                 </div>
-                <div className="mt-6 pt-6 border-t border-cream-300">
-                  <span className="text-[11px] uppercase tracking-[0.25em] text-ink/55">
-                    {s.pricing.label}
-                  </span>
-                  <p className="mt-2 font-display text-4xl tracking-tight">
-                    {s.pricing.price}
-                  </p>
-                  <p className="mt-1 text-xs text-ink/60">{s.pricing.note}</p>
-                </div>
                 <a
                   href="/#contact"
                   className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-ink text-cream-50 text-sm font-medium hover:bg-orange-ascode transition-colors"
@@ -272,15 +263,6 @@ function ServiceDetail() {
                     {t}
                   </span>
                 ))}
-              </div>
-              <div className="mt-8 pt-6 border-t border-cream-300">
-                <span className="text-[11px] uppercase tracking-[0.25em] text-ink/55">
-                  {s.pricing.label}
-                </span>
-                <p className="mt-2 font-display text-4xl md:text-5xl tracking-tight">
-                  {s.pricing.price}
-                </p>
-                <p className="mt-2 text-sm text-ink/60">{s.pricing.note}</p>
               </div>
             </div>
           </div>
