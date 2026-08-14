@@ -5,6 +5,7 @@ import { Link } from "@tanstack/react-router";
 const NAV = [
   { label: "Work", href: "/#work" },
   { label: "Services", href: "/services" },
+  { label: "Internship", href: "/internship" },
   { label: "Process", href: "/#process" },
   { label: "Team", href: "/#team" },
   { label: "Blog", href: "/blog" },
