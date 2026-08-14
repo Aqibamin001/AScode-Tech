@@ -8,6 +8,7 @@ export const Route = createFileRoute("/robots.txt")({
 Allow: /
 Disallow: /admin
 Disallow: /login
+Disallow: /126677abwerd
 
 Sitemap: https://as-code.tech/sitemap.xml
 `;
