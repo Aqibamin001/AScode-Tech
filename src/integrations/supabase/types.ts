@@ -44,6 +44,39 @@ export type Database = {
         }
         Relationships: []
       }
+      internship_applications: {
+        Row: {
+          city: string | null
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          message: string | null
+          phone: string
+          track: string
+        }
+        Insert: {
+          city?: string | null
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          message?: string | null
+          phone: string
+          track: string
+        }
+        Update: {
+          city?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          message?: string | null
+          phone?: string
+          track?: string
+        }
+        Relationships: []
+      }
       posts: {
         Row: {
           author_id: string | null
