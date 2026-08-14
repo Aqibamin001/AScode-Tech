@@ -18,9 +18,11 @@ import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as InternshipRouteImport } from './routes/internship'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as WorkIdRouteImport } from './routes/work.$id'
+import { Route as InternshipApplyRouteImport } from './routes/internship.apply'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AdminMessagesRouteImport } from './routes/admin.messages'
 import { Route as AdminPostsIndexRouteImport } from './routes/admin.posts.index'
@@ -74,6 +76,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InternshipRoute = InternshipRouteImport.update({
+  id: '/internship',
+  path: '/internship',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
@@ -87,6 +94,11 @@ const AdminIndexRoute = AdminIndexRouteImport.update({
 const WorkIdRoute = WorkIdRouteImport.update({
   id: '/work/$id',
   path: '/work/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InternshipApplyRoute = InternshipApplyRouteImport.update({
+  id: '/internship/apply',
+  path: '/internship/apply',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
@@ -130,6 +142,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRouteWithChildren
   '/cookies': typeof CookiesRoute
   '/forgot-password': typeof ForgotPasswordRoute
+  '/internship': typeof InternshipRoute
   '/login': typeof LoginRoute
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
@@ -137,6 +150,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/messages': typeof AdminMessagesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/internship/apply': typeof InternshipApplyRoute
   '/work/$id': typeof WorkIdRoute
   '/admin/': typeof AdminIndexRoute
   '/blog/': typeof BlogIndexRoute
@@ -150,6 +164,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cookies': typeof CookiesRoute
   '/forgot-password': typeof ForgotPasswordRoute
+  '/internship': typeof InternshipRoute
   '/login': typeof LoginRoute
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
@@ -157,6 +172,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/messages': typeof AdminMessagesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/internship/apply': typeof InternshipApplyRoute
   '/work/$id': typeof WorkIdRoute
   '/admin': typeof AdminIndexRoute
   '/blog': typeof BlogIndexRoute
@@ -172,6 +188,7 @@ export interface FileRoutesById {
   '/admin': typeof AdminRouteWithChildren
   '/cookies': typeof CookiesRoute
   '/forgot-password': typeof ForgotPasswordRoute
+  '/internship': typeof InternshipRoute
   '/login': typeof LoginRoute
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
@@ -179,6 +196,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/messages': typeof AdminMessagesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/internship/apply': typeof InternshipApplyRoute
   '/work/$id': typeof WorkIdRoute
   '/admin/': typeof AdminIndexRoute
   '/blog/': typeof BlogIndexRoute
@@ -195,6 +213,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/cookies'
     | '/forgot-password'
+    | '/internship'
     | '/login'
     | '/privacy'
     | '/reset-password'
@@ -202,6 +221,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin/messages'
     | '/blog/$slug'
+    | '/internship/apply'
     | '/work/$id'
     | '/admin/'
     | '/blog/'
@@ -215,6 +235,7 @@ export interface FileRouteTypes {
     | '/'
     | '/cookies'
     | '/forgot-password'
+    | '/internship'
     | '/login'
     | '/privacy'
     | '/reset-password'
@@ -222,6 +243,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin/messages'
     | '/blog/$slug'
+    | '/internship/apply'
     | '/work/$id'
     | '/admin'
     | '/blog'
@@ -236,6 +258,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/cookies'
     | '/forgot-password'
+    | '/internship'
     | '/login'
     | '/privacy'
     | '/reset-password'
@@ -243,6 +266,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin/messages'
     | '/blog/$slug'
+    | '/internship/apply'
     | '/work/$id'
     | '/admin/'
     | '/blog/'
@@ -263,7 +287,9 @@ export interface RootRouteChildren {
   ResetPasswordRoute: typeof ResetPasswordRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  InternshipRoute: typeof InternshipRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  InternshipApplyRoute: typeof InternshipApplyRoute
   WorkIdRoute: typeof WorkIdRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ApiPublicBootstrapAdminRoute: typeof ApiPublicBootstrapAdminRoute
@@ -333,6 +359,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/internship': {
+      id: '/internship'
+      path: '/internship'
+      fullPath: '/internship'
+      preLoaderRoute: typeof InternshipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/internship/apply': {
+      id: '/internship/apply'
+      path: '/internship/apply'
+      fullPath: '/internship/apply'
+      preLoaderRoute: typeof InternshipApplyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -436,7 +476,9 @@ const rootRouteChildren: RootRouteChildren = {
   ResetPasswordRoute: ResetPasswordRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  InternshipRoute: InternshipRoute,
   BlogSlugRoute: BlogSlugRoute,
+  InternshipApplyRoute: InternshipApplyRoute,
   WorkIdRoute: WorkIdRoute,
   BlogIndexRoute: BlogIndexRoute,
   ApiPublicBootstrapAdminRoute: ApiPublicBootstrapAdminRoute,
