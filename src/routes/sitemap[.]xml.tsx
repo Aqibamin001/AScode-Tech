@@ -11,6 +11,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         const staticUrls = [
           { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly" },
           { loc: `${SITE}/services`, priority: "0.9", changefreq: "monthly" },
+          { loc: `${SITE}/internship`, priority: "0.9", changefreq: "weekly" },
           ...SERVICES.map((s) => ({
             loc: `${SITE}/services/${s.slug}`,
             priority: "0.8",
