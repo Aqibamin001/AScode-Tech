@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import {
   Rocket,
@@ -13,7 +13,6 @@ import {
   CalendarClock,
   CalendarCheck2,
   Globe2,
-  MessageCircle,
   CheckCircle2,
 } from "lucide-react";
 
@@ -134,7 +133,7 @@ const FAQS = [
   },
   {
     q: "How do I apply?",
-    a: "Click \"Apply Now\" below to open the application form, or message us directly on WhatsApp at 0326-6502223 or 0311-6576844.",
+    a: "Click \"Apply Now\" below to message us directly on WhatsApp at 0326-6502223 or 0311-6576844.",
   },
 ];
 
@@ -176,22 +175,15 @@ function InternshipPage() {
 
         {/* CTA row */}
         <div className="flex flex-wrap items-center gap-4 mb-16 md:mb-24">
-          <Link
-            to="/internship/apply"
+          <a
+            href="https://wa.me/923266502223"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-orange-ascode text-cream-50 text-sm font-medium hover:bg-ink transition-colors"
             data-cursor-hover="true"
           >
             Apply Now
             <span aria-hidden>→</span>
-          </Link>
-          <a
-            href="https://wa.me/923266502223"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-ink/20 text-sm font-medium hover:border-orange-ascode hover:text-orange-ascode transition-colors"
-          >
-            <MessageCircle className="w-4 h-4" />
-            Chat on WhatsApp
           </a>
         </div>
 
@@ -351,24 +343,17 @@ function InternshipPage() {
           </h3>
           <div className="col-span-12 md:col-span-5">
             <p className="text-ink/70 mb-4">
-              Seats close 18 August 2026. Apply now or message us directly on WhatsApp.
+              Seats close 18 August 2026. Apply now on WhatsApp.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link
-                to="/internship/apply"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-cream-50 text-sm font-medium hover:bg-orange-ascode transition-colors"
-                data-cursor-hover="true"
-              >
-                Apply Now →
-              </Link>
               <a
                 href="https://wa.me/923116576844"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-ink/20 text-sm font-medium hover:border-orange-ascode hover:text-orange-ascode transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-cream-50 text-sm font-medium hover:bg-orange-ascode transition-colors"
+                data-cursor-hover="true"
               >
-                <MessageCircle className="w-4 h-4" />
-                0311-6576844
+                Apply Now →
               </a>
             </div>
           </div>
