@@ -23,7 +23,6 @@ import { Route as InternshipRouteImport } from './routes/internship'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as WorkIdRouteImport } from './routes/work.$id'
-import { Route as InternshipApplyRouteImport } from './routes/internship.apply'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AdminMessagesRouteImport } from './routes/admin.messages'
 import { Route as AdminPostsIndexRouteImport } from './routes/admin.posts.index'
@@ -97,11 +96,6 @@ const WorkIdRoute = WorkIdRouteImport.update({
   path: '/work/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
-const InternshipApplyRoute = InternshipApplyRouteImport.update({
-  id: '/internship/apply',
-  path: '/internship/apply',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
@@ -151,7 +145,6 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/messages': typeof AdminMessagesRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/internship/apply': typeof InternshipApplyRoute
   '/work/$id': typeof WorkIdRoute
   '/admin/': typeof AdminIndexRoute
   '/blog/': typeof BlogIndexRoute
@@ -173,7 +166,6 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/messages': typeof AdminMessagesRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/internship/apply': typeof InternshipApplyRoute
   '/work/$id': typeof WorkIdRoute
   '/admin': typeof AdminIndexRoute
   '/blog': typeof BlogIndexRoute
@@ -197,7 +189,6 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/messages': typeof AdminMessagesRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/internship/apply': typeof InternshipApplyRoute
   '/work/$id': typeof WorkIdRoute
   '/admin/': typeof AdminIndexRoute
   '/blog/': typeof BlogIndexRoute
@@ -222,7 +213,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin/messages'
     | '/blog/$slug'
-    | '/internship/apply'
     | '/work/$id'
     | '/admin/'
     | '/blog/'
@@ -244,7 +234,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin/messages'
     | '/blog/$slug'
-    | '/internship/apply'
     | '/work/$id'
     | '/admin'
     | '/blog'
@@ -267,7 +256,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin/messages'
     | '/blog/$slug'
-    | '/internship/apply'
     | '/work/$id'
     | '/admin/'
     | '/blog/'
@@ -290,7 +278,6 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   InternshipRoute: typeof InternshipRoute
   BlogSlugRoute: typeof BlogSlugRoute
-  InternshipApplyRoute: typeof InternshipApplyRoute
   WorkIdRoute: typeof WorkIdRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ApiPublicBootstrapAdminRoute: typeof ApiPublicBootstrapAdminRoute
@@ -367,13 +354,6 @@ declare module '@tanstack/react-router' {
       path: '/internship'
       fullPath: '/internship'
       preLoaderRoute: typeof InternshipRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/internship/apply': {
-      id: '/internship/apply'
-      path: '/internship/apply'
-      fullPath: '/internship/apply'
-      preLoaderRoute: typeof InternshipApplyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -479,7 +459,6 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   InternshipRoute: InternshipRoute,
   BlogSlugRoute: BlogSlugRoute,
-  InternshipApplyRoute: InternshipApplyRoute,
   WorkIdRoute: WorkIdRoute,
   BlogIndexRoute: BlogIndexRoute,
   ApiPublicBootstrapAdminRoute: ApiPublicBootstrapAdminRoute,
