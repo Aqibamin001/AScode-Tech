@@ -9,8 +9,6 @@ import {
   Award,
   Briefcase,
   Wallet,
-  FileEdit,
-  CalendarClock,
   CalendarCheck2,
   Globe2,
   CheckCircle2,
@@ -23,13 +21,13 @@ export const Route = createFileRoute("/internship")({
       {
         name: "description",
         content:
-          "Join AScode Tech's 3-month remote course + internship in WordPress Development, Python Development or SEO. Student portal, tasks, certificate, and a shot at job placement. Enrollment closes 18 August 2026.",
+          "Join AScode Tech's 3-month remote course + internship in WordPress Development, Python Development or SEO. Student portal, tasks, certificate, and a shot at job placement. Classes start just 3 days after you enroll.",
       },
       { property: "og:title", content: "3-Month Online Course + Internship Program — AScode Tech" },
       {
         property: "og:description",
         content:
-          "Remote internship covering WordPress, Python & SEO. Free internship, Rs. 1,000 registration. Classes start 20 August 2026.",
+          "Remote internship covering WordPress, Python & SEO. Free internship. Classes start just 3 days after enrollment.",
       },
       { property: "og:url", content: "https://as-code.tech/internship" },
       { property: "og:type", content: "website" },
@@ -85,9 +83,7 @@ const GET_ITEMS = [
 
 const FACTS = [
   { icon: Wallet, label: "Internship", value: "FREE" },
-  { icon: FileEdit, label: "Enrollment / Registration Fee", value: "Rs. 1,000" },
-  { icon: CalendarClock, label: "Last Date to Enroll", value: "18 August 2026" },
-  { icon: CalendarCheck2, label: "Classes Start", value: "20 August 2026" },
+  { icon: CalendarCheck2, label: "Classes Start", value: "3 Days After Enrollment" },
   { icon: Globe2, label: "Format", value: "100% Remote" },
 ];
 
@@ -100,7 +96,7 @@ const STEPS = [
   {
     n: "02",
     title: "Confirm your seat",
-    desc: "Pay the Rs. 1,000 registration fee to lock your seat before 18 August 2026.",
+    desc: "We confirm your seat and get you set up — no fee required.",
   },
   {
     n: "03",
@@ -110,7 +106,7 @@ const STEPS = [
   {
     n: "04",
     title: "Start learning",
-    desc: "Classes begin 20 August 2026. Learn, practice, get scored, and grow for 3 months.",
+    desc: "Classes begin just 3 days after enrollment. Learn, practice, get scored, and grow for 3 months.",
   },
 ];
 
@@ -121,7 +117,7 @@ const FAQS = [
   },
   {
     q: "Is the internship paid?",
-    a: "The internship itself is free to join — you only pay the one-time Rs. 1,000 enrollment/registration fee to secure your seat.",
+    a: "The internship is completely free to join — there's no enrollment or registration fee.",
   },
   {
     q: "Will I really get a job offer?",
@@ -143,9 +139,9 @@ function InternshipPage() {
       {/* Urgency banner */}
       <div className="ticker-row bg-ink text-cream-50">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-2.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center text-xs md:text-sm">
-          <span className="font-medium">⏳ Enrollment closes 18 August 2026</span>
+          <span className="font-medium">🚀 Classes start just 3 days after enrollment</span>
           <span className="hidden sm:inline text-cream-50/40">•</span>
-          <span className="text-cream-50/80">Classes start 20 August 2026 — seats are limited</span>
+          <span className="text-cream-50/80">Seats are limited — enroll today</span>
         </div>
       </div>
 
@@ -306,7 +302,7 @@ function InternshipPage() {
               "Score & performance tracking keeps you accountable",
               "Certificate that shows real, project-based work",
               "Interview-based fast track to a role at AScode Tech",
-              "Only Rs. 1,000 to start — the internship itself is free",
+              "Completely free to join — classes start 3 days after enrollment",
             ].map((point) => (
               <div key={point} className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-orange-ascode shrink-0 mt-0.5" />
@@ -343,7 +339,7 @@ function InternshipPage() {
           </h3>
           <div className="col-span-12 md:col-span-5">
             <p className="text-ink/70 mb-4">
-              Seats close 18 August 2026. Apply now on WhatsApp.
+              Classes start just 3 days after enrollment. Apply now on WhatsApp.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
