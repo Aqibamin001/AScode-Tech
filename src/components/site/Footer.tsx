@@ -19,6 +19,7 @@ export default function Footer() {
             <Link to="/services" className="block hover:text-orange-ascode">Services</Link>
             <a href="/#team" className="block hover:text-orange-ascode">Team</a>
             <Link to="/blog" className="block hover:text-orange-ascode">Blog</Link>
+            <Link to="/verify" className="block hover:text-orange-ascode">Verify Certificate</Link>
           </div>
           <div className="col-span-6 md:col-span-2 text-sm text-cream-100/70 space-y-2">
             <p className="text-cream-100 font-semibold mb-2">Legal</p>
