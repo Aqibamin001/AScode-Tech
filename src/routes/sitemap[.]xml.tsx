@@ -11,13 +11,13 @@ export const Route = createFileRoute("/sitemap.xml")({
         const staticUrls = [
           { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly" },
           { loc: `${SITE}/services`, priority: "0.9", changefreq: "monthly" },
-          { loc: `${SITE}/internship`, priority: "0.9", changefreq: "weekly" },
           ...SERVICES.map((s) => ({
             loc: `${SITE}/services/${s.slug}`,
             priority: "0.8",
             changefreq: "monthly",
           })),
           { loc: `${SITE}/blog`, priority: "0.8", changefreq: "weekly" },
+          { loc: `${SITE}/verify`, priority: "0.5", changefreq: "yearly" },
           { loc: `${SITE}/privacy`, priority: "0.3", changefreq: "yearly" },
           { loc: `${SITE}/cookies`, priority: "0.3", changefreq: "yearly" },
         ];
